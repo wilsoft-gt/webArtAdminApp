@@ -1,0 +1,60 @@
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e4619561f0.js"></script>
+  <title>Git manager</title>
+  <style>
+    .align-vertical-center {
+      align-items: center;
+    }
+
+    body {
+
+      background: #00002bff;
+      background-image: url({% static 'jsonapp/background3.png' %});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .card {
+      background-color: #bfc9e7e3;
+    }
+
+    .card-header {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body class="">
+
+  <div class="h-100 d-flex justify-content-center align-vertical-center">
+
+    <div class="card col-md-6">
+      <div class="card-body">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">Git options</label>
+            <input name="commitname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Commit message">
+            <small id="emailHelp" class="form-text text-muted">Commit message</small>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-cloud-upload-alt"></i> Push</button>
+          <a href="/" class="btn btn-secondary"><i class="fas fa-home"></i> Menu</a>
+        </form>
+  
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

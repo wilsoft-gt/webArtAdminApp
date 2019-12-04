@@ -1,0 +1,126 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e4619561f0.js"></script>
+    {% load static %}
+    <style>
+        /* * {
+                    border: 1px red dotted;
+                } */
+
+        .align-vertical-center {
+            align-items: center;
+        }
+
+        body {
+            background: #00002bff;
+            background-image: url({% static 'jsonapp/background4.png' %});
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card {
+            background-color: #bfc9e7e3;
+        }
+
+        .card-header {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <title>Add new entry</title>
+</head>
+
+<body style="" class="d-flex justify-content-center align-vertical-center">
+
+    <!-- card width container/handdler -->
+    <div class="col-sm-8">
+
+        <!-- starting a card -->
+        <div class="card">
+
+            <!-- card header -->
+            <div class="card-header col-md-12">
+                Add new entry
+            </div>
+
+            <!-- card body -->
+            <div class="card-body">
+
+                <!-- iniciating the form -->
+                <form action="" method="POST" enctype="multipart/form-data" class="d-flex flex-column col-md">
+                    {% csrf_token %}
+                    <!-- first row for id and name -->
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="inputID">ID</label>
+                            <input name="id" type="number" class="form-control" id="inputID" placeholder="ID #">
+                        </div>
+                        <div class="form-group col-md-9">
+                            <label for="inputPassword4">Title</label>
+                            <input name="title" type="text" class="form-control" id="inputPassword4"
+                                placeholder="Artwork Title">
+                        </div>
+                    </div>
+
+                    <!-- second row for description -->
+                    <div class="form-group">
+                        <label for="inputDescription">Description</label>
+                        <textarea name="description" class="form-control" id="inputDescription" cols="30" rows="3"
+                            placeholder="Brief description of the artwork"></textarea>
+                    </div>
+
+                    <!-- third row for root url -->
+                    <div class="form-group">
+                        <label for="inputRootUrl">Root url</label>
+                        <input name="rootUrl" type="text" class="form-control" id="inputRootUrl"
+                            placeholder="wilsoft-gt.github.com/art/images/artwork/title">
+                    </div>
+
+                    <!-- fourth row image names -->
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="inputFileNames">File names</label>
+                            <input name="filenames" type="text" class="form-control" id="inputFileNames"
+                                placeholder="Add the name of the images separated by comas (,) without space">
+                        </div>
+                    </div>
+
+                    <!-- fifth row software used -->
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="inputSoftware">Software</label>
+                            <input name="software" type="text" class="form-control" id="inputSoftware"
+                                placeholder="Add the software names separated by comas (,) without spaces">
+                        </div>
+                    </div>
+
+                    <!-- sixth row tags -->
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="inputTags">Tags</label>
+                            <input name="tags" type="text" class="form-control" id="inputTags"
+                                placeholder="Add the tag names separated by comas (,) without space">
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary col-md-3"><i class="fas fa-save"></i>
+                            Submit</button>
+                            <a href="/" class="btn btn-secondary"><i class="fas fa-home"></i> Menu</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
